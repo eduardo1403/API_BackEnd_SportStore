@@ -1,4 +1,5 @@
 const express = require('express');
+const Joi = require('@hapi/joi');
 const users = require('../models/users')
 
 const router = express.Router();
@@ -19,6 +20,36 @@ router.get("/users/:id", (req, res) => {
     const {id} = req.params;
     users.findById(id).then((data) => res.json(data)).catch((error) => res.json( {message: error}))
 });
+
+
+
+//Obtener un usuario por email y password
+router.use(express.json());
+
+router.post("/users/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    // Buscar el usuario en la base de datos por su correo electrónico
+    const user = await users.findOne({ email });
+
+    // Verificar si el usuario existe y si la contraseña coincide
+    if (user && user.password === password) {
+      // Credenciales válidas, enviar una respuesta exitosa
+      return res.status(200).json({ message: "Inicio de sesión exitoso" });
+    } else {
+      // Credenciales inválidas, enviar un mensaje de error
+      return res.status(401).json({ message: "Credenciales inválidas" });
+    }
+  } catch (error) {
+    // Manejar errores, por ejemplo, problemas con la base de datos
+    console.error(error);
+    return res.status(500).json({ message: "Error interno del servidor" });
+  }
+});
+
+
+
 
 
 //Actualizar usuario por id
