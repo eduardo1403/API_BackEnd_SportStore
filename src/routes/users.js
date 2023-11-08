@@ -35,8 +35,8 @@ router.post("/users/login", async (req, res) => {
 
     // Verificar si el usuario existe y si la contraseña coincide
     if (user && user.password === password) {
-      // Credenciales válidas, enviar una respuesta exitosa
-      return res.status(200).json({ message: "Inicio de sesión exitoso" });
+      // Credenciales válidas, enviar los datos del usuario en la respuesta
+      return res.status(200).json(user);
     } else {
       // Credenciales inválidas, enviar un mensaje de error
       return res.status(401).json({ message: "Credenciales inválidas" });

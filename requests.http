@@ -24,6 +24,15 @@ Content-Type: application/json
     "password": "edi123"
 }
 
+### API WEB login
+POST https://api-backend-mqv1.onrender.com/api/users/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "edi@gmail.com",
+    "password": "edi123"   
+}
+
 ### Actualizar usuario por id
 PUT http://localhost:8000/api/users/64ff60379cf8b0c26b0050f1 HTTP/1.1
 Content-Type: application/json
