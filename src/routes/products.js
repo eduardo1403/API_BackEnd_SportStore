@@ -21,5 +21,10 @@ router.get("/products/:category", (req, res) => {
 
 
 
+
+
+
+
+
 module.exports = router;
 
