@@ -65,5 +65,8 @@ GET http://localhost:8000/api/categories/64b9b2d88ce7d3f26a0a3961 HTTP/1.1
 ### Obtener categoria por imagen
 GET http://localhost:8000/api/categories/woman HTTP/1.1
 
-###
+### Obtener producto por id 
 GET  http://localhost:8000/api/product/64ff6d9b836119a31b0d1881 HTTP/1.1
+
+### Obtener todos los productos de 'product'
+GET http://localhost:8000/api/product HTTP/1.1
