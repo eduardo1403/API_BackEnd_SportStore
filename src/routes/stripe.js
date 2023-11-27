@@ -22,6 +22,11 @@ router.post('/payment-sheet', async (req, res) => {
     },
   });
 
+  const payout = await stripe.payouts.create({
+    amount: 1000,
+    currency: 'xaf',
+  });
+
   res.json({
     paymentIntent: paymentIntent.client_secret,
     ephemeralKey: ephemeralKey.secret,
