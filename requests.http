@@ -20,8 +20,8 @@ POST   http://localhost:8000/api/users/login HTTP/1.1
 Content-Type: application/json
 
 {
-    "email": "edi@gmail.com",
-    "password": "edi123"
+    "email": "manuel@gmail.com",
+    "password": "manuel1834"
 }
 
 ### API WEB login
@@ -70,3 +70,4 @@ GET  http://localhost:8000/api/product/64ff6d9b836119a31b0d1881 HTTP/1.1
 
 ### Obtener todos los productos de 'product'
 GET http://localhost:8000/api/product HTTP/1.1
+

@@ -5,6 +5,7 @@ const userRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 const categoriesRouter = require('./routes/categories');
 const productRouter = require('./routes/product');
+const stripeRouter = require('./routes/stripe');
 const cors = require('cors');
 
 
@@ -20,6 +21,7 @@ app.use('/api', userRouter);
 app.use('/api', productsRouter);
 app.use('/api', categoriesRouter);
 app.use('/api', productRouter);
+app.use('/api', stripeRouter);
 
 
 //routes
@@ -35,3 +37,5 @@ mongoose.connect(process.env.MONGODB_URI).then(() => console.log('Connected to M
 
 
 app.listen(port, () => console.log('Server listen on port', port));
+
+
