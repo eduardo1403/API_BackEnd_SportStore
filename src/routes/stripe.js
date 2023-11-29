@@ -14,7 +14,7 @@ router.post('/payment-sheet', async (req, res) => {
     {apiVersion: '2023-10-16'}
   );
   const paymentIntent = await stripe.paymentIntents.create({
-    amount: totalPrice,
+    amount: totalPrice * 100,
     currency: 'mxn',
     customer: customer.id,
     // In the latest version of the API, specifying the `automatic_payment_methods` parameter is optional because Stripe enables its functionality by default.
