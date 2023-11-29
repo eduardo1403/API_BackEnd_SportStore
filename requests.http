@@ -71,3 +71,6 @@ GET  http://localhost:8000/api/product/64ff6d9b836119a31b0d1881 HTTP/1.1
 ### Obtener todos los productos de 'product'
 GET http://localhost:8000/api/product HTTP/1.1
 
+### Obtener todas las direcciones
+GET http://localhost:8000/api/adresses/64ff60379cf8b0c26b0050f1 HTTP/1.1
+

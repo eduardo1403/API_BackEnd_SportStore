@@ -6,6 +6,7 @@ const productsRouter = require('./routes/products');
 const categoriesRouter = require('./routes/categories');
 const productRouter = require('./routes/product');
 const stripeRouter = require('./routes/stripe');
+const adressesRouter = require('./routes/adresses'); 
 const cors = require('cors');
 
 
@@ -22,7 +23,7 @@ app.use('/api', productsRouter);
 app.use('/api', categoriesRouter);
 app.use('/api', productRouter);
 app.use('/api', stripeRouter);
-
+app.use('/api', adressesRouter);
 
 //routes
 app.get("/", (req, res) => {
